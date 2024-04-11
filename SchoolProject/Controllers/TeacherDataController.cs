@@ -57,7 +57,7 @@ namespace SchoolProject.Controllers
                 string TeacherLname = ResultSet["teacherlname"].ToString();
                 string EmployeeNumber = ResultSet["employeenumber"].ToString();
                 string HireDate = ResultSet["hiredate"].ToString();
-                float salary = float.Parse(ResultSet["salary"].ToString()) ;
+                decimal salary = decimal.Parse(ResultSet["salary"].ToString()) ;
 
 
                 Teacher NewTeacher = new Teacher();
@@ -121,7 +121,7 @@ namespace SchoolProject.Controllers
                 string TeacherLname = ResultSet["teacherlname"].ToString();
                 string EmployeeNumber = ResultSet["employeenumber"].ToString();
                 string HireDate = ResultSet["hiredate"].ToString();
-                float salary = float.Parse(ResultSet["salary"].ToString());
+                decimal salary = decimal.Parse(ResultSet["salary"].ToString());
 
                 NewTeacher.TeacherId = TeacherId;
                 NewTeacher.TeacherFname = TeacherFname;
@@ -135,6 +135,16 @@ namespace SchoolProject.Controllers
 
             return NewTeacher;
         }
+        [HttpGet]
+        [Route("api/TeacherData/FindTeacher/{name}/{hiredate}/{salary}")]
+        public Teacher FindTeacher(string name, string hiredate, decimal salary)
+        {
+            Teacher NewTeacher = new Teacher();
+
+            return NewTeacher;
+        }
+
 
     }
+
 }

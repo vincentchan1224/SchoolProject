@@ -13,6 +13,6 @@ namespace SchoolProject.Models
         public string TeacherLname;
         public string EmployeeNumber;
         public string HireDate;
-        public float salary;
+        public decimal salary;
     }
 }
